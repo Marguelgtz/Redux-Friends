@@ -12,11 +12,16 @@ const initialState = {
   error: null,
 }
 
-export default (state = initialState, action) {
+export default (state = initialState, action) => {
   switch (action.type) {
-    case value:
-      return 
+    case FETCHING:
+      return Object.assign({}, state, {fetchingFriends: true})
+    case GET_FRIENDS:
+      return Object.assign({}, state, {friends: action.payload, fetchingFriends:false}
+      )
+    case ERROR:
+      return Object.assign({}, state, {error: action.payload, fetchingFriends: false})
     default:
-      break;
+      return state;
   }
 }
