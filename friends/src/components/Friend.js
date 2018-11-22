@@ -3,10 +3,10 @@ import React from 'react';
 const Friend = props => {
   return (
     <div className="friend-container">
-      <h3>{props.friend}</h3>
-    <div className="friend-info">
-      <ul>{props.age}</ul>
-      <ul>{props.email}</ul>
+      <h2>{props.name}</h2>
+    <div className="friend-info">      
+      <ul> <b>Age:</b> {props.age}</ul>
+      <ul> <b>Email:</b> {props.email}</ul>
     </div>
     </div>
   )

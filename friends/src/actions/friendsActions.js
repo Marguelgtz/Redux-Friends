@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { EPROTONOSUPPORT } from 'constants';
 
 export const FETCHING = "FETCHING";
 export const GET_FRIENDS = "GET_FRIENDS";
@@ -22,3 +21,4 @@ export const fetchFriends = () => dispatch => {
       })
     })
 }
+
