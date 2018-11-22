@@ -2,11 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux'; 
+import friendsReducer from './reducers/friendsReducer';
 
-import './index.css';
-import App from './App';
 
-const store = createStore()
+import './components/App.css';
+import App from './components/App';
+
+const store = createStore(friendsReducer)
 
 ReactDOM.render(
 <Provider store={store}>
