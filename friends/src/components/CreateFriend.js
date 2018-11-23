@@ -21,6 +21,7 @@ class AddFriend extends React.Component {
   render() { 
     return (
       <div className="add-friend-form">
+        <h3>New Friend?</h3>
         <form onSubmit={this.AddFriendHandler}>
           <p>Name:</p>
           <input type="text"
@@ -41,6 +42,7 @@ class AddFriend extends React.Component {
           value={this.state.email}
           name="email" />
         </form>
+        <button>Create Friend</button>
       </div>
     );
   }
