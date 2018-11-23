@@ -3,6 +3,8 @@ import axios from 'axios';
 export const FETCHING = "FETCHING";
 export const GET_FRIENDS = "GET_FRIENDS";
 export const ERROR = "ERROR";
+export const ADDING = "ADDING";
+export const ADDED = "ADDED";
 
 export const fetchFriends = () => dispatch => {
   dispatch({type: FETCHING});
@@ -25,13 +27,13 @@ export const fetchFriends = () => dispatch => {
 //Adding a new friend
 
 export const addFriend = friends => dispatch => {
-  dispatch({type: FETCHING})
+  dispatch({type: ADDING})
     axios 
       .post("http://localhost:5000/api/friends", friends)
       .then(response => {
-        dispatch({type: GET_FRIENDS, friends: response.data})
+        dispatch({type: ADDED, payload: response.data})
       })
       .catch(error => {
-        dispatch({type: ERROR, error: error})
+        dispatch({type: ERROR, payload: error})
       })
 }
