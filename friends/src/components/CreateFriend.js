@@ -5,7 +5,7 @@ class AddFriend extends React.Component {
     super(props);
     this.state = { 
       name: '',
-      age: '',
+      age: null,
       email:'',
     }
   }
@@ -30,7 +30,7 @@ class AddFriend extends React.Component {
           value={this.state.name}
           name="name" />
           <p>Age:</p>
-          <input type="text"
+          <input type="number"
           onChange={this.inputHandler}
           placeholder="Age"
           value={this.state.age}
