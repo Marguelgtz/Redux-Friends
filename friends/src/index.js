@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux'; 
-import friendsReducer from './reducers/friendsReducer';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger'
 
-import './components/App.css';
 import App from './components/App';
+import './components/App.css';
+import friendsReducer from './reducers/friendsReducer';
 
 const middleware = applyMiddleware(logger, thunk)
 
