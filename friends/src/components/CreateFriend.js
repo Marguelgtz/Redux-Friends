@@ -14,8 +14,13 @@ class CreateFriend extends React.Component {
   }
 
   inputHandler = e => {
-    this.setState({[e.target.name]: e.target.value})
+    const newId = Date.now();
+    this.setState({
+      [e.target.name]: e.target.value,
+      id: newId,
+    })
     console.log("input handled");
+
   }
 
   AddFriendHandler = e => {
@@ -41,19 +46,22 @@ class CreateFriend extends React.Component {
               type="text"
               onChange={this.inputHandler}
               placeholder="Name"
-              name="name" />
+              name="name"
+              value={this.state.name} />
             <p>Age:</p>
             <input 
               type="number"
               onChange={this.inputHandler}
               placeholder="Age"
-              name="age" />
+              name="age"
+              value={this.state.age || ''} />
             <p>Email:</p>
             <input 
               type="text"
               onChange={this.inputHandler}
               placeholder="Email"
-              name="email" />
+              name="email"
+              value={this.state.email} />
             <button type="submit">Create Friend</button>
           </form>
       </div>
