@@ -1,4 +1,4 @@
-import {FETCHING, GET_FRIENDS, ERROR} from '../actions/friendsActions';
+import {FETCHING, GET_FRIENDS, ADDING, ADDED, ERROR} from '../actions/friendsActions';
 
 const initialState = {
   fetchingFriends: false,
@@ -21,6 +21,10 @@ export default (state = initialState, action) => {
       )
     case ERROR:
       return Object.assign({}, state, {error: action.payload, fetchingFriends: false})
+    case ADDING: 
+        return Object.assign({}, state, {updatingFriend: true} )
+    case ADDED: 
+        return Object.assign({}, state, {updatingFriend: false, friends: [...state.friends, ...action.payload]})
     default:
       return state;
   }
