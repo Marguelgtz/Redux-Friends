@@ -19,7 +19,7 @@ export const fetchFriends = () => dispatch => {
     .catch(error => {
       dispatch({
         type: ERROR,
-        payload: error
+        payload: 'error'
       })
     })
 }
