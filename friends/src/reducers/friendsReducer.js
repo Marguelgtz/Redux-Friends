@@ -23,8 +23,13 @@ export default (state = initialState, action) => {
       return Object.assign({}, state, {error: action.payload, fetchingFriends: false})
     case ADDING: 
         return Object.assign({}, state, {updatingFriend: true} )
-    case ADDED: 
-        return Object.assign({}, state, {updatingFriend: false, friends: [...state.friends, ...action.payload]})
+    case ADDED:
+        console.log(action.payload)
+        return {
+          ...state,
+          updatingFriend: false,
+          friends: [...action.payload]
+        }
     default:
       return state;
   }

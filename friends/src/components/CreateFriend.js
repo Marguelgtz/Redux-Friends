@@ -9,6 +9,7 @@ class CreateFriend extends React.Component {
       name: '',
       age: null,
       email:'',
+      id: null,
     }
   }
 
@@ -20,7 +21,13 @@ class CreateFriend extends React.Component {
   AddFriendHandler = e => {
     e.preventDefault();
     console.log(this.state);
-    this.props.addFriend();
+    this.props.addFriend(this.state);
+    this.setState({
+      name: '',
+      age: null,
+      email:'',
+      id: null,
+      })
   }
 
   render() { 
